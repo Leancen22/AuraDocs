@@ -20,6 +20,7 @@ export default function WaitlistForm() {
 
       await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
+        mode: "no-cors",
         body: new URLSearchParams({
           email: email,
         }),
