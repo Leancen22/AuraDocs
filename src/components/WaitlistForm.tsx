@@ -10,6 +10,7 @@ export default function WaitlistForm() {
   const [loading, setLoading] = useState(false);
 
   const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxJMCh65KxJF3BCLe2xS5UAKhcD16huf9f5QHtfw4AkYY_BKf4n4KRnD8H2Zk7JziWK/exec";
+  
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
