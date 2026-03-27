@@ -9,17 +9,32 @@ export default function WaitlistForm() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxJMCh65KxJF3BCLe2xS5UAKhcD16huf9f5QHtfw4AkYY_BKf4n4KRnD8H2Zk7JziWK/exec";
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
-    setLoading(true);
-    // Simulate API call
-    setTimeout(() => {
-      setLoading(false);
+
+    try {
+      setLoading(true);
+
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        body: new URLSearchParams({
+          email: email,
+        }),
+      });
+
       setSubmitted(true);
       setEmail("");
-    }, 1200);
+    } catch (err) {
+      console.error("Error enviando email:", err);
+      alert("Error al registrarse. Intenta nuevamente.");
+    } finally {
+      setLoading(false);
+    }
   };
+
 
   return (
     <div className="w-full max-w-md mx-auto mt-8">
