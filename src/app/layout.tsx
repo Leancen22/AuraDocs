@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Aura - PDF Role Redaction",
+  title: "DockDocs - PDF Role Redaction",
   description: "Censura documentos por rol y genera links de único uso con seguridad criptográfica.",
 };
 

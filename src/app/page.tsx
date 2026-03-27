@@ -43,7 +43,7 @@ export default function Home() {
         <div className="container mx-auto px-6 py-4 flex justify-between items-center max-w-7xl">
           <div className="flex items-center gap-2">
             <img src="/AuraDoc.png" alt="AuraDocs" style={{ height: '32px', width: 'auto' }} />
-            <span className="text-xl font-bold tracking-tight text-white">AuraDocs</span>
+            <span className="text-xl font-bold tracking-tight text-white">LockDocs</span>
           </div>
           <div>
             <a href="#waitlist" className="bg-[#6366f11a] hover:bg-[#6366f133] text-[var(--color-primary)] border border-[#6366f14d] px-5 py-2 rounded-full font-medium transition-all">
@@ -196,7 +196,12 @@ export default function Home() {
               title: 'Define las Regiones — manual o con IA', 
               desc: 'Dibuja bloques de censura interactivos, o simplemente escribí una instrucción en lenguaje natural y la IA detecta automáticamente qué ocultar según el rol.' 
             },
-            { step: '03', title: 'Genera el Link Seguro', desc: 'Crea un enlace para el perfil deseado. Se redibujará el PDF al vuelo y el link dejará de servir una vez abierto.' }
+            { step: '03', title: 'Genera el Link Seguro', desc: 'Crea un enlace para el perfil deseado. Se redibuja el PDF al instante y el link dejará de servir una vez abierto.' },
+            { 
+              step: '04', 
+              title: 'Cifrado y Acceso Protegido', 
+              desc: 'Protege el acceso mediante cifrado avanzado. Los enlaces pueden requerir contraseñas de un solo uso y los archivos pueden mantenerse cifrados para garantizar que solo el destinatario autorizado pueda acceder.' 
+            }
           ].map((item, i) => (
             <FadeIn key={i} delay={i * 0.1} className="flex flex-col md:flex-row items-center md:items-start gap-6 glass p-8 rounded-2xl">
               <div className="text-6xl font-black text-[#6366f133] leading-none shrink-0">{item.step}</div>
@@ -213,7 +218,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="mt-auto py-8 border-t border-[var(--color-border-glass)] bg-black/40 text-center">
         <p className="text-[var(--color-text-secondary)] text-sm">
-          © {new Date().getFullYear()} AuraDocs. Todos los derechos reservados.
+          © {new Date().getFullYear()} LockDocs. Todos los derechos reservados.
         </p>
       </footer>
     </div>
